@@ -1,2 +1,2 @@
-web: gunicorn PSMC/wsgi:application
+web: gunicorn PSMC.wsgi
 
