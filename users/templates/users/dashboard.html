@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    <form method="POST" class="form-group">
+        <section class="section pt--70 pb--40">
+            <div class="container">
+                <div class="title">
+                    <h2 class="h2">Aloha, {{ user.username|default:'Guest' }}</h2>
+                </div>
+                <div class="section--title pb--50 text-left">
+                    <div class="sub-title">
+                        <p>Communicate with the empire, purchase savage gear, and more...</p>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+
+                        <!-- To Login/Logout -->
+                        {% if user.is_authenticated %}
+                            <div class="sub-title">
+                                <h6>Gotta bounce? <a href="{% url 'logout' %}">Logout</a></h6>
+                            </div>
+                        {% else %}
+                            <p>You are not currently logged in.</p>
+                            <div class="title">
+                                <h6>First time at the fale? <a href="{% url 'register' %}">Register here</a></h6>
+                                <h6>Have an account? <a href="{% url 'login' %}">Login</a></h6>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    <form method="POST" class="form-group">
+        <section class="section pt--70 pb--40">
+            <div class="container">
+                <div class="title">
+                    <h2 class="h2">Login</h2>
+                </div>
+                <div class="section--title pb--50 text-left">
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags %}
+                                <p style="background-color: #dff0d8; color: #3c763d; border-color:#d6e9c6; display: table"><span> {{ message }}  </span></p>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                        <div class="sub-title">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <input type="submit" value="Login" class="btn btn-primary">
+                        </div>
+                    </div>
+                <div>Don't have an account? <a href="/register" >Create an account</a>.</div>
+            </div>
+        </section>
+    </form>
+
+{% endblock %}
