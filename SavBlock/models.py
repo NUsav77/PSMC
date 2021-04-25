@@ -84,5 +84,3 @@ class Uso(User):
         super().__init__(first_name, last_name)
         self.tribe = tribe.title()
         self.rank = User.rank[2]
-
-# test
