@@ -19,7 +19,6 @@ lib64/
 parts/
 sdist/
 var/
-PSMC/secrets.py
 wheels/
 *.egg-info/
 .installed.cfg
