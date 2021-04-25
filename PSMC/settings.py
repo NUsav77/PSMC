@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secrets.get_secret()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['savblock.herokuapp.com']
 
 # Application definition
 
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'SavBlock.apps.SavblockConfig',
-    'bootstrap4',
     'register.apps.RegisterConfig',
     'crispy_forms',
     'users',
