@@ -13,7 +13,6 @@ class RegisterForm(UserCreationForm):
         help_text='Please enter a valid email address'
     )
 
-    '''
     rank = forms.ChoiceField(
         label='Are you a PSMC member?',
         choices=SavBlock.models.User.rank,
@@ -21,13 +20,12 @@ class RegisterForm(UserCreationForm):
         required=True,
         help_text='Member accounts will be validated with your HC.',
     )
-    '''
 
     class Meta:
         model = User
         # username = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
         fields = ['username', 'first_name', 'last_name', 'email',
-                  'password1', 'password2']  # 'rank',
+                  'rank', 'password1', 'password2']
 
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
@@ -38,7 +36,6 @@ class RegisterForm(UserCreationForm):
         return user
 
 
-'''
 class AnakRegisterForm(UserCreationForm):
     tribe = forms.ChoiceField(
         label='What tribe are you from, Uce?',
@@ -65,4 +62,3 @@ class UsoRegisterForm(AuthenticationForm):
 
 class ChiefRegisterForm(AuthenticationForm):
     pass
-'''
