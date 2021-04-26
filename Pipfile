@@ -9,6 +9,7 @@ fprint = "*"
 gunicorn = "*"
 pip = "*"
 dj-database-url = "*"
+django-heroku = "*"
 
 [dev-packages]
 
