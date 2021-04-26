@@ -27,6 +27,9 @@ def register(response):
 
     return render(request=response, template_name='register/register.html', context={'form': form})
 
+def coming_soon(coming_soon):
+    return render(coming_soon, 'coming-soon.html')
+
 
 '''
 def anak_register(anak_response):
