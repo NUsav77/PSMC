@@ -27,9 +27,6 @@ class RegisterForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email',
                   'rank', 'password1', 'password2']
 
-    class Media:
-        js = ('js/memberform.js',)
-
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
         user.email = self.cleaned_data['email']

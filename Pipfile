@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 fprint = "*"
 gunicorn = "*"
+pip = "*"
+
 
 [dev-packages]
 
