@@ -10,6 +10,7 @@ gunicorn = "*"
 pip = "*"
 dj-database-url = "*"
 django-heroku = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
