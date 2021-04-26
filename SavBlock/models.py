@@ -55,12 +55,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     id = models.AutoField(primary_key=True)
     is_staff = models.BooleanField('staff status', default=False)
     date_joined = models.DateField('date_joined', default=timezone.now)
-    ranking = models.CharField(choices=rank, max_length=50, default="Supporter")
+    # ranking = models.CharField(choices=rank, max_length=50, default="Supporter")
 
     objects = UserManager()
 
     USERNAME_FIELD = 'username'
-    REQUIRED_FIELDS = ['email', 'password', 'ranking']
+    REQUIRED_FIELDS = ['email', 'password']  # 'ranking'
 
 
     # Magic method returns string of self
