@@ -1,5 +1,6 @@
 asgiref==3.3.4
 beautifulsoup4==4.9.3
+bootstrap4==0.1.0
 dj-database-url==0.5.0
 Django==3.2
 django-bootstrap-static==4.2.1
