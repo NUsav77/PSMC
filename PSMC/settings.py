@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secrets.get_secret()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['savblock.herokuapp.com']
+# ALLOWED_HOSTS = ['savblock.herokuapp.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -136,3 +137,6 @@ LOGOUT_REDIRECT_URL = 'login'
 AUTH_USER_MODEL = 'SavBlock.User'
 
 # Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
