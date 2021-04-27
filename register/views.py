@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import RegisterForm  # AnakRegisterForm, UsoRegisterForm, ChiefRegisterForm
-
+from formtools.wizard.views import SessionWizardView
 
 # Create your views here.
 def register(response):
@@ -29,6 +29,8 @@ def register(response):
 
 def coming_soon(coming_soon):
     return render(coming_soon, 'coming-soon.html')
+
+
 
 
 '''

@@ -12,6 +12,7 @@ dj-database-url = "*"
 django-heroku = "*"
 django-crispy-forms = "*"
 bootstrap4 = "*"
+django-formtools = "*"
 
 [dev-packages]
 
