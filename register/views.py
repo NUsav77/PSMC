@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from .forms import RegisterForm  # AnakRegisterForm, UsoRegisterForm, ChiefRegisterForm
 from formtools.wizard.views import SessionWizardView
 
+
 # Create your views here.
 def register(response):
     context = {}
@@ -27,10 +28,9 @@ def register(response):
 
     return render(request=response, template_name='register/register.html', context={'form': form})
 
+
 def coming_soon(coming_soon):
     return render(coming_soon, 'coming-soon.html')
-
-
 
 
 '''
