@@ -1,4 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm
+from django.forms import Form
 from django import forms
 import SavBlock.models
 from SavBlock.models import *
@@ -30,13 +31,13 @@ class RegisterForm(UserCreationForm):
     def save(self, commit=True):
         user = super(RegisterForm, self).save(commit=False)
         user.email = self.cleaned_data['email']
-        # User.ranking = self.cleaned_data['rank']
+        user.ranking = self.cleaned_data['rank']
         if commit:
             user.save()
         return user
 
 
-class AnakRegisterForm(UserCreationForm):
+class AnakRegisterForm(Form):
     tribe = forms.ChoiceField(
         label='What tribe are you from, Uce?',
         choices=SavBlock.models.Anak.tribe,
@@ -55,6 +56,7 @@ class AnakRegisterForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
 
 class UsoRegisterForm(AuthenticationForm):
     pass

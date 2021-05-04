@@ -13,6 +13,8 @@ django-heroku = "*"
 django-crispy-forms = "*"
 bootstrap4 = "*"
 django-formtools = "*"
+django-extensions = "*"
+werkzeug = "*"
 
 [dev-packages]
 

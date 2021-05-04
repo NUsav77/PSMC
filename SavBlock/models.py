@@ -33,7 +33,6 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-
     rank = [
         ('Supporter', 'Supporter (non-member)'),
         ('Anak', 'Anak'),
@@ -56,12 +55,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField('staff status', default=False)
     date_joined = models.DateField('date_joined', default=timezone.now)
     ranking = models.CharField(choices=rank, max_length=50, default="Supporter")
+    tribe = models.CharField(choices=tribe, max_length=50, default="None")
 
     objects = UserManager()
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'password']  # 'ranking'
-
 
     # Magic method returns string of self
     def __str__(self):
@@ -77,6 +76,11 @@ class Anak(User):
         super().__init__(*args, **kwargs)
         self.tribe = tribe.title()
         self.rank = User.rank[1]
+
+    tribe = [
+        ('NaKoaHema', 'Na Koa Hema'),
+        ('Alakai', 'Alaka\'i')
+    ]
 
 
 class Uso(User):

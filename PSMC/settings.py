@@ -15,6 +15,8 @@ import register.apps
 from PSMC import secrets
 import dj_database_url
 import django_heroku
+import django_extensions
+import werkzeug
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -44,6 +46,8 @@ INSTALLED_APPS = [
     'users',
     'bootstrap4',
     'formtools',
+    'django_extensions',
+    'werkzeug',
 ]
 
 MIDDLEWARE = [
