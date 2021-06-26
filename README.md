@@ -1,4 +1,4 @@
-# [Live Page](savblock.herokuapp.com)
+# [Live Page](www.savblock.herokuapp.com)
 Be advised, the live page is running on a free server. The initial load time can take 5-10 seconds.
 
 # SavBlock
