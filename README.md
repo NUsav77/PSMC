@@ -1,6 +1,6 @@
 # Live Page
 # https://savblock.herokuapp.com/
-Be advised, the live page is running on a free server. The initial load time can take 5-10 seconds.
+Be advised, the live page is running on a free server which offers a very slow initial load time. The initial load time can take 5-10 seconds.
 
 # SavBlock
 SavBlock Social Application for Pacific Savagez MC Members and Supporters
